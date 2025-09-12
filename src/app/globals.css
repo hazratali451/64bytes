@@ -18,3 +18,18 @@ body {
 button{
   cursor: pointer;
 }
+
+/* .logo-marquee-track {
+  animation: marquee 14s linear infinite;
+  will-change: transform;
+} 
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
+} */
+
