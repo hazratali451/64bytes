@@ -59,7 +59,7 @@ export default function LogoMarquee({ pxPerSecond = 100 }: { pxPerSecond?: numbe
       >
         {slides.map((logo, i) => (
           <div key={i} style={{ flex: "0 0 auto" }}>
-            <Image src={logo} alt={`logo-${i + 1}`} className="object-contain object-center w-auto h-10 md:h-auto" />
+            <Image loading="eager" src={logo} alt={`logo-${i + 1}`} className="object-contain object-center w-auto h-10 md:h-auto" />
           </div>
         ))}
       </div>

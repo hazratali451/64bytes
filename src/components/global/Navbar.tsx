@@ -22,41 +22,71 @@ export default function Navbar() {
 
     return (
         <>
-            <motion.header
-                initial={{ y: "-100%" }}
-                animate={{ y: "0%" }}
-                transition={transition}
-                className='z-[99] fixed w-full top-0 lg:backdrop-blur-[2px] lg:bg-[#0b0b0b33] px-5 '
-            >
-                <nav className='flex gap-4 items-center justify-between max-w-[1180px] mx-auto lg:py-4 py-3'>
-                    <div className=''>{icon_logo}</div>
-                    <ul className='lg:flex items-center gap-6 hidden'>
-                        {menuItems.map((item) => {
-                            const isActive = pathname === item.href;
+            {pathname === "/" ? (
+                <motion.header
+                    initial={{ y: "-100%" }}
+                    animate={{ y: "0%" }}
+                    transition={transition}
+                    className='z-[99] fixed w-full top-0 lg:backdrop-blur-[2px] lg:bg-[#0b0b0b33] px-5 '
+                >
+                    <nav className='flex gap-4 items-center justify-between max-w-[1180px] mx-auto lg:py-4 py-3'>
+                        <div className=''>{icon_logo}</div>
+                        <ul className='lg:flex items-center gap-6 hidden'>
+                            {menuItems.map((item) => {
+                                const isActive = pathname === item.href;
 
-                            return (
-                                <li key={item.href}>
-                                    <Link
-                                        href={item.href}
-                                        className={`p-1 text-lg font-medium leading-[28px] ${
-                                            isActive ? "text-violet1" : ""
-                                        }`}
-                                    >
-                                        {item.label}
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
+                                return (
+                                    <li key={item.href}>
+                                        <Link
+                                            href={item.href}
+                                            className={`transition-colors duration-200 ease-out p-1 hover:text-violet1 text-lg font-medium leading-[28px] ${
+                                                isActive ? "text-violet1" : ""
+                                            }`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
 
-                    <Button variant='fade-violet' />
-                </nav>
-            </motion.header>
+                        <Button variant='fade-violet' />
+                    </nav>
+                </motion.header>
+            ) : (
+                <header
+                    className='z-[99] fixed w-full top-0 lg:backdrop-blur-[2px] lg:bg-[#0b0b0b33] px-5 '
+                >
+                    <nav className='flex gap-4 items-center justify-between max-w-[1180px] mx-auto lg:py-4 py-3'>
+                        <div className=''>{icon_logo}</div>
+                        <ul className='lg:flex items-center gap-6 hidden'>
+                            {menuItems.map((item) => {
+                                const isActive = pathname === item.href;
+
+                                return (
+                                    <li key={item.href}>
+                                        <Link
+                                            href={item.href}
+                                            className={`transition-colors duration-200 ease-out hover:text-cyan1 p-1 text-lg font-medium leading-[28px] ${
+                                                isActive ? "text-cyan1" : ""
+                                            }`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+
+                        <Button variant='fade-violet' />
+                    </nav>
+                </header>
+            )}
 
             <motion.section
                 initial={{ y: "150%" }}
                 animate={{ y: "0%" }}
-                transition={{ delay: 6, duration: .8, ease: easeOut }}
+                transition={{ delay: 6, duration: 0.8, ease: easeOut }}
                 className=' lg:hidden z-99 fixed bottom-4 left-5 right-5 flex justify-center '
             >
                 <ul className='p-1 backdrop-blur-[2px] bg-white1/15 rounded-full items-center flex  justify-center'>
@@ -64,7 +94,7 @@ export default function Navbar() {
                         const isActive = pathname === item.href;
 
                         return (
-                            <li key={item.href} className="flex">
+                            <li key={item.href} className='flex'>
                                 <Link
                                     href={item.href}
                                     className={`py-1 px-2 text-sm font-medium leading-[24px] rounded-full ${

@@ -108,6 +108,11 @@ export default function SliderSection() {
 
     return (
         <section className='px-5'>
+            <div className='max-w-0 max-h-0 absolute -z-999 pointer-events-none opacity-0'>
+                {slides.map((cur, i) => (
+                    <Image src={cur.icon} key={i} alt='' loading="eager"/>
+                ))}
+            </div>
             <div className='max-w-[780px] mx-auto relative'>
                 <Image
                     className='absolute lg:-left-[370px] lg:bottom-9 lg:top-auto -top-5 w-[330px] lg:w-auto'
@@ -122,7 +127,7 @@ export default function SliderSection() {
 
                     <div className='relative'>
                         {/* added `relative` so the absolute children can overlap without changing layout */}
-                        <div className='border border-[#212730] rounded-sm  flex flex-col gap-6 lg:min-w-[480px] lg:max-w-[480px] relative  lg:min-h-[300px] min-h-[285px] justify-center items-center backdrop-blur-[2px]'>
+                        <div className='border border-[#212730] rounded-sm  flex flex-col gap-6 lg:min-w-[480px] lg:max-w-[480px] relative  lg:h-[300px] min-h-[285px] justify-center items-center backdrop-blur-[2px]'>
                             <AnimatePresence>
                                 <motion.div
                                     key={current}
@@ -142,6 +147,7 @@ export default function SliderSection() {
                                     <Image
                                         src={slides[current].icon}
                                         alt={""}
+                                        loading='eager'
                                     />
 
                                     <div className=''>
@@ -160,7 +166,11 @@ export default function SliderSection() {
                                 aria-hidden='true'
                                 className='invisible flex flex-col gap-6 lg:p-10 p-6'
                             >
-                                <Image src={slides[current].icon} alt={""} />
+                                <Image
+                                    src={slides[current].icon}
+                                    alt={""}
+                                    loading='eager'
+                                />
 
                                 <div className='min-w-0'>
                                     <h3 className='lg:text-2xl text-lg leading-[28px] lg:leading-[34px] tracking-[1px] uppercase font-robotoMono '>
