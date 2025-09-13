@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 const DURATION = 0.3; // animation duration per letter
 const LETTER_STAGGER = 0.1; // seconds between letters
-const BASE_DELAY = 2; // seconds before the letter-by-letter animation starts
+const BASE_DELAY = 2.8; // seconds before the letter-by-letter animation starts
 
 export default function AnimatedHeading() {
   // Keep the same visual structure:

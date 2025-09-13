@@ -18,7 +18,7 @@ const menuItems = [
 export default function Navbar() {
     const pathname = usePathname();
 
-    const transition = { delay: 1.2, duration: .8, ease: easeOut };
+    const transition = { delay: 1.8, duration: 1, ease: easeOut };
 
     return (
         <>
@@ -56,7 +56,7 @@ export default function Navbar() {
             <motion.section
                 initial={{ y: "150%" }}
                 animate={{ y: "0%" }}
-                transition={{ delay: 5, duration: .8, ease: easeOut }}
+                transition={{ delay: 6, duration: .8, ease: easeOut }}
                 className=' lg:hidden z-99 fixed bottom-4 left-5 right-5 flex justify-center '
             >
                 <ul className='p-1 backdrop-blur-[2px] bg-white1/15 rounded-full items-center flex  justify-center'>

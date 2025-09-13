@@ -42,6 +42,6 @@ button{
   .mobile-slide-up--delay-2s {
     transform: translateY(100px);
     will-change: transform, opacity;
-    animation: slideUpMobile 0.8s ease-out 1.6s forwards;
+    animation: slideUpMobile 1.6s ease-out 1.6s forwards;
   }
 }
