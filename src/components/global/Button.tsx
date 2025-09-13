@@ -15,7 +15,7 @@ export default function Button({
     return (
         <button
             className={cn(
-                "py-2 px-6 text-lg font-medium leading-[28px] text-center rounded-[48px] backdrop-blur-[2px]",
+                "py-2 md:px-6 px-4 xl:text-lg md:text-base text-sm font-medium leading-[24px] xl:leading-[28px] text-center rounded-[48px] backdrop-blur-[2px]",
 
                 variant === "cyan" && "bg-white hover:bg-cyan1 text-black1",
 

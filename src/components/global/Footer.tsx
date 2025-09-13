@@ -4,14 +4,15 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <footer className='bg-[#101010]'>
-            <div className='max-w-[1180px] pt-[72px] pb-[88px] mx-auto flex justify-between'>
+        <footer className='bg-[#101010] px-5'>
+            <div className='max-w-[1180px] pt-[72px] pb-[88px] mx-auto flex md:flex-row flex-col gap-10 justify-between'>
                 <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='110'
                     height='110'
                     viewBox='0 0 110 110'
                     fill='none'
+                    className="lg:size-[110] size-[88px]"
                 >
                     <path
                         d='M34.2583 29.1254C43.5742 30.5432 51.5442 37.3229 51.5442 48.5107C51.5442 60.2914 42.4766 69.2365 30.626 69.2365C18.6841 69.2365 9.61646 60.2914 9.61646 48.5236C9.61646 43.8449 11.1451 39.759 13.2618 36.2403L28.4833 11.4932H45.7692L34.2583 29.1254ZM30.613 42.0791C26.9676 42.0791 24.1716 44.9275 24.1716 48.5107C24.1716 52.0939 26.9676 55.0326 30.613 55.0326C34.2583 55.0326 36.9629 52.1197 36.9629 48.5107C36.9629 44.9147 34.2583 42.0791 30.613 42.0791Z'
@@ -43,8 +44,8 @@ export default function Footer() {
                     />
                 </svg>
 
-                <div className='flex flex-col gap-4 items-end'>
-                    <div className='flex items-center gap-6'>
+                <div className='flex flex-col lg:gap-4 gap-10 md:items-end'>
+                    <div className='flex lg:items-center gap-4 lg:gap-6 flex-col md:flex-row whitespace-nowrap flex-wrap justify-end'>
                         <div className='flex items-center gap-3'>
                             <Image
                                 src={"/assets/phone.svg"}
@@ -91,7 +92,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="flex gap-6">
+                    <div className="flex justify-between sm:justify-stretch sm:gap-6">
                       <Link href={''} className="leading-normal text-sm ">Impressum</Link>
                       <Link href={''} className="leading-normal text-sm ">Datenschutz</Link>
                       <Link href={''} className="leading-normal text-sm ">AGB</Link>

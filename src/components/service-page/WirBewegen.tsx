@@ -1,28 +1,25 @@
 import Image from "next/image";
 import React from "react";
+import { GrayBall } from "../global/icons";
 
 const data = [
     {
         heading: "Web-Entwicklung",
-        // text: <>Develop a strong, recognizable fashion brand identity.</>,
     },
     {
         heading: "Individualsoftware",
-        // text: <>Develop a strong, recognizable fashion brand identity.</>,
     },
     {
         heading: "Prozess-Digitalisierung",
-        // text: <>Develop a strong, recognizable fashion brand identity.</>,
     },
     {
         heading: "E-Commerce",
-        // text: <>Develop a strong, recognizable fashion brand identity.</>,
     },
 ];
 
 export default function WirBewegen() {
     return (
-        <section className='pb-30 pt-28 relative '>
+        <section className='md:pb-30 md:pt-28 pt-18 pb-20 relative mobile-slide-up--delay-2s'>
             <div className='relative z-1'>
                 <div className='flex flex-col items-center gap-12'>
                     <div className='flex items-center gap-4'>
@@ -33,34 +30,37 @@ export default function WirBewegen() {
                         <div className='min-w-[33px] h-[1px] bg-gray1 opacity-25 w-[33px]'></div>
                     </div>
 
-                    <div className='grid grid-cols-2 gap-y-10 max-w-[780px] w-full'>
+                    <div className='grid md:grid-cols-2 gap-y-12 justify-items-center md:gap-y-10 max-w-[780px] w-full'>
                         {data.map((cur, i) => (
-                            <div className='text-center' key={i}>
-                                <h3 className='font-robotoMono text-2xl leading-[34px] tracking-[1px] uppercase '>
-                                    {cur.heading}
-                                </h3>
-                                <p className='mt-3 text-base leading-normal text-gray1'>
-                                    Develop a strong, recognizable <br />{" "}
-                                    fashion brand identity.
-                                </p>
-                            </div>
+                            <React.Fragment key={i}>
+                                <div className='text-center'>
+                                    <h3 className='font-robotoMono text-lg leading-[28px] md:text-2xl md:leading-[34px] tracking-[1px] uppercase '>
+                                        {cur.heading}
+                                    </h3>
+                                    <p className='md:mt-3 mt-4 text-base leading-normal text-gray1'>
+                                        Develop a strong, recognizable <br />{" "}
+                                        fashion brand identity.
+                                    </p>
+                                </div>
+
+                                {i < data.length - 1 && (
+                                    <div className='w-10 md:hidden h-[1px] bg-gray1/25'></div>
+                                )}
+                            </React.Fragment>
                         ))}
                     </div>
                 </div>
             </div>
 
             <div className='absolute inset-0 overflow-hidden'>
-                <Image
-                    className='absolute top-2.5 -right-[180px]'
-                    src='/assets/service/grayBall.svg'
-                    alt=''
-                    width={400}
-                    height={400}
+                <GrayBall
+                    className='md:size-[400px] size-[223px] absolute md:top-2.5 top-[200px] -right-[130px] md:-right-[180px] md:[fill-opacity:0.4]'
+                    pclassName='md:[fill-opacity:0.4]'
                 />
             </div>
 
             <Image
-                className='absolute -left-[140px] -bottom-[190px]'
+                className='md:size-[400px] size-[223px] absolute -left-10 md:-left-[140px] md:-bottom-[190px] bottom-[210px]'
                 src='/assets/service/violetBall.svg'
                 alt=''
                 width={400}

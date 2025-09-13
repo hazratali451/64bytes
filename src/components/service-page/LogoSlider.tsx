@@ -52,17 +52,14 @@ export default function LogoMarquee({ pxPerSecond = 100 }: { pxPerSecond?: numbe
     <div className="logo-marquee" style={{ overflow: "hidden" }}>
       <div
         ref={trackRef}
-        className="logo-marquee-track"
+        className="logo-marquee-track flex md:gap-20 gap-12 items-center"
         style={{
-          display: "flex",
-          gap: "80px",
-          alignItems: "center",
           animation: `marquee ${duration}s linear infinite`,
         }}
       >
         {slides.map((logo, i) => (
           <div key={i} style={{ flex: "0 0 auto" }}>
-            <Image src={logo} alt={`logo-${i + 1}`} className="object-contain" />
+            <Image src={logo} alt={`logo-${i + 1}`} className="object-contain object-center w-auto h-10 md:h-auto" />
           </div>
         ))}
       </div>

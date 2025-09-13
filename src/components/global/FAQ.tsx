@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 import { AnimatePresence, motion, easeInOut } from "motion/react";
 
 type FAQItem = {
-    title: string;
+    title: string | ReactElement;
     text?: string; // optional, falls back to global txt
 };
 

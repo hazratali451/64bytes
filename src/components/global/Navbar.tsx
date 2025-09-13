@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { easeOut, motion } from "motion/react";
 import { icon_logo } from "./icons";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -17,20 +18,57 @@ const menuItems = [
 export default function Navbar() {
     const pathname = usePathname();
 
+    const transition = { delay: 1.2, duration: .8, ease: easeOut };
+
     return (
-        <header className="z-[99] fixed w-full top-0 backdrop-blur-[2px] bg-[#0b0b0b33]">
-            <nav className='flex gap-4 items-center justify-between max-w-[1180px] mx-auto py-4'>
-                <div className=''>{icon_logo}</div>
-                <ul className='flex items-center gap-6'>
+        <>
+            <motion.header
+                initial={{ y: "-100%" }}
+                animate={{ y: "0%" }}
+                transition={transition}
+                className='z-[99] fixed w-full top-0 lg:backdrop-blur-[2px] lg:bg-[#0b0b0b33] px-5 '
+            >
+                <nav className='flex gap-4 items-center justify-between max-w-[1180px] mx-auto lg:py-4 py-3'>
+                    <div className=''>{icon_logo}</div>
+                    <ul className='lg:flex items-center gap-6 hidden'>
+                        {menuItems.map((item) => {
+                            const isActive = pathname === item.href;
+
+                            return (
+                                <li key={item.href}>
+                                    <Link
+                                        href={item.href}
+                                        className={`p-1 text-lg font-medium leading-[28px] ${
+                                            isActive ? "text-violet1" : ""
+                                        }`}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                </li>
+                            );
+                        })}
+                    </ul>
+
+                    <Button variant='fade-violet' />
+                </nav>
+            </motion.header>
+
+            <motion.section
+                initial={{ y: "150%" }}
+                animate={{ y: "0%" }}
+                transition={{ delay: 5, duration: .8, ease: easeOut }}
+                className=' lg:hidden z-99 fixed bottom-4 left-5 right-5 flex justify-center '
+            >
+                <ul className='p-1 backdrop-blur-[2px] bg-white1/15 rounded-full items-center flex  justify-center'>
                     {menuItems.map((item) => {
                         const isActive = pathname === item.href;
 
                         return (
-                            <li key={item.href}>
+                            <li key={item.href} className="flex">
                                 <Link
                                     href={item.href}
-                                    className={`p-1 text-lg font-medium leading-[28px] ${
-                                        isActive ? "text-violet1" : ""
+                                    className={`py-1 px-2 text-sm font-medium leading-[24px] rounded-full ${
+                                        isActive ? "text-black1 bg-white1 " : ""
                                     }`}
                                 >
                                     {item.label}
@@ -39,9 +77,7 @@ export default function Navbar() {
                         );
                     })}
                 </ul>
-
-                <Button variant="fade-cyan"/>
-            </nav>
-        </header>
+            </motion.section>
+        </>
     );
 }

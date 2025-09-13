@@ -5,22 +5,48 @@ import Image from "next/image";
 const txt =
     "Wir kreieren einzigartige Markenidentitäten, die Ihre Werte und Vision widerspiegeln. Mit durchdachtem Design und strategischem Ansatz stärken wir Ihre Markenpräsenz.";
 const faqItems = [
-    { title: "Kostenlose Erstberatung" },
-    { title: "Analyse und Strategie-Entwicklung" },
-    { title: "Implementierung und Umsetzung" },
-    { title: "Bewertung und Anpassung" },
+    {
+        title: (
+            <>
+                Kostenlose <br className='block sm:hidden' />
+                Erstberatung
+            </>
+        ),
+    },
+    {
+        title: (
+            <>
+                Analyse und <br className='block sm:hidden' />
+                Strategie-Entwicklung
+            </>
+        ),
+    },
+    {
+        title: (
+            <>
+                Implementierung <br className='block sm:hidden' />
+                und Umsetzung
+            </>
+        ),
+    },
+    {
+        title: (
+            <>
+                Bewertung <br className='block sm:hidden' />
+                und Anpassung
+            </>
+        ),
+    },
 ];
 export default function FaqSection() {
     return (
-        <section className='pt-28 pb-30 overflow-hidden'>
+        <section className='md:pb-30 md:pt-28 pt-18 pb-20 overflow-hidden px-5'>
             <div className='max-w-[980px] mx-auto relative'>
-                <div className='flex gap-30 relative z-1'>
-                    <div className='min-w-0'>
-                        <h2 className='text-[40px] leading-[120%] tracking-[1px] uppercase font-robotoMono'>
-                            Ihr&nbsp;
-                            <span className='text-violet1'>Erfolg</span>
-                            &nbsp;ist unsere&nbsp;
-                            <span className='text-violet1'>Mission</span>
+                <div className='flex flex-col lg:flex-row xl:gap-30 gap-8 relative z-1'>
+                    <div className='min-w-0 max-w-[540px] lg:max-w-none'>
+                        <h2 className='sm:text-[40px] max-w-[355px] lg:max-w-none text-[28px] leading-[120%] tracking-[1px] uppercase font-robotoMono'>
+                            Ihr <span className='text-violet1'>Erfolg</span> ist
+                            unsere <span className='text-violet1'>Mission</span>
                         </h2>
 
                         <p className='text-base text-gray1 mt-4 leading-normal'>
@@ -33,13 +59,13 @@ export default function FaqSection() {
                         </p>
                     </div>
 
-                    <div className='min-w-[480px]'>
+                    <div className='lg:min-w-[480px]'>
                         <FAQ items={faqItems} defaultText={txt} />
                     </div>
                 </div>
 
                 <Image
-                    className='absolute -left-[40px] -top-[110px]'
+                    className='absolute -left-[40px] -top-[110px] md:inline hidden'
                     src='/assets/service/violetBall.svg'
                     alt=''
                     width={400}
@@ -47,7 +73,7 @@ export default function FaqSection() {
                 />
 
                 <Image
-                    className='absolute -right-[192px] top-10'
+                    className='absolute -right-[192px] top-10 md:inline hidden'
                     src='/assets/service/violetBall.svg'
                     alt=''
                     width={400}

@@ -22,7 +22,7 @@ const slides = [
                 Strategie <br /> und Beratung
             </>
         ),
-        text: "In der digitalen Welt zählt eine klare Strategie...",
+        text: "In der digitalen Welt zählt eine klare Strategie. Wir entwickeln Lösungen, die Ihre Vision verwirklichen und nachhaltig Erfolg bringen.",
         icon: icon1,
     },
     {
@@ -107,17 +107,22 @@ export default function SliderSection() {
         setCurrent((prev) => (prev - 1 + totalSlides) % totalSlides);
 
     return (
-        <section>
+        <section className='px-5'>
             <div className='max-w-[780px] mx-auto relative'>
-                <Image className="absolute -left-[370px] bottom-9" src={spiderNetImg} alt='' />
-                <div className='flex gap-8 items-end relative z-1'>
-                    <h2 className='text-white1 fontRobotoMono leading-[120%] text-[40px] uppercase tracking-[1px] '>
-                        Alles aus einer Hand
+                <Image
+                    className='absolute lg:-left-[370px] lg:bottom-9 lg:top-auto -top-5 w-[330px] lg:w-auto'
+                    src={spiderNetImg}
+                    alt=''
+                />
+
+                <div className='flex lg:flex-row flex-col gap-8 lg:items-end relative z-1'>
+                    <h2 className='text-white1 font-robotoMono leading-[120%] text-[28px] lg:text-[40px] uppercase tracking-[1px] '>
+                        Alles aus <br /> einer Hand
                     </h2>
 
                     <div className='relative'>
                         {/* added `relative` so the absolute children can overlap without changing layout */}
-                        <div className='border border-[#212730] rounded-sm  flex flex-col gap-6 min-w-[480px] max-w-[480px] relative h-[300px] justify-center items-center'>
+                        <div className='border border-[#212730] rounded-sm  flex flex-col gap-6 lg:min-w-[480px] lg:max-w-[480px] relative  lg:min-h-[300px] min-h-[285px] justify-center items-center backdrop-blur-[2px]'>
                             <AnimatePresence>
                                 <motion.div
                                     key={current}
@@ -130,7 +135,7 @@ export default function SliderSection() {
                                         ease: "easeOut",
                                     }}
                                     // absolute so it overlaps previous slide during exit
-                                    className='absolute inset-0 flex flex-col gap-6 p-10'
+                                    className='absolute inset-0 flex flex-col gap-6 lg:p-10 p-6'
                                 >
                                     {/* {icon} */}
 
@@ -140,7 +145,7 @@ export default function SliderSection() {
                                     />
 
                                     <div className=''>
-                                        <h3 className='text-2xl leading-[34px] tracking-[1px] uppercase font-robotoMono'>
+                                        <h3 className='lg:text-2xl text-lg leading-[28px] lg:leading-[34px] tracking-[1px] uppercase font-robotoMono '>
                                             {slides[current].title}
                                         </h3>
                                         <p className='text-gray1 leading-normal text-base mt-2'>
@@ -153,12 +158,12 @@ export default function SliderSection() {
                             {/* keep an invisible (but height-preserving) placeholder for correct initial height on first render */}
                             <div
                                 aria-hidden='true'
-                                className='invisible flex flex-col gap-6 p-10'
+                                className='invisible flex flex-col gap-6 lg:p-10 p-6'
                             >
                                 <Image src={slides[current].icon} alt={""} />
 
-                                <div className=''>
-                                    <h3 className='text-2xl leading-[34px] tracking-[1px] uppercase font-robotoMono'>
+                                <div className='min-w-0'>
+                                    <h3 className='lg:text-2xl text-lg leading-[28px] lg:leading-[34px] tracking-[1px] uppercase font-robotoMono '>
                                         {slides[current].title}
                                     </h3>
                                     <p className='text-gray1 leading-normal text-base mt-2'>
@@ -171,7 +176,7 @@ export default function SliderSection() {
                 </div>
 
                 <div className='flex items-center gap-8 mt-8 relative z-1'>
-                    <div className='bg-[#212730] h-[1px] flex-1 rounded-2xl relative overflow-hidden'>
+                    <div className='bg-[#212730] h-[2px] flex-1 rounded-2xl relative overflow-hidden'>
                         <motion.div
                             className='absolute top-0 bottom-0 left-0 bg-cyan1'
                             style={{ width: `${progressPercent}%` }}

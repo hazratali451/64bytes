@@ -19,17 +19,29 @@ button{
   cursor: pointer;
 }
 
-/* .logo-marquee-track {
-  animation: marquee 14s linear infinite;
-  will-change: transform;
-} 
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* keyframes: move from y=100px -> y=0 */
+@keyframes slideUpMobile {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.logo-marquee:hover .logo-marquee-track {
-  animation-play-state: paused;
-} */
+/* mobile-only class: animation triggers only on screens <= 768px */
+@media (max-width: 768px) {
+  .mobile-slide-up {
+    will-change: transform, opacity;
+    animation: slideUpMobile 0.8s ease-out forwards;
+  }
 
+  /* optional: delayed variant (2s delay) */
+  .mobile-slide-up--delay-2s {
+    transform: translateY(100px);
+    will-change: transform, opacity;
+    animation: slideUpMobile 0.8s ease-out 1.6s forwards;
+  }
+}
