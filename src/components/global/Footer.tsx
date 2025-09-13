@@ -12,7 +12,7 @@ export default function Footer() {
                     height='110'
                     viewBox='0 0 110 110'
                     fill='none'
-                    className="lg:size-[110] size-[88px]"
+                    className='lg:size-[110] size-[88px]'
                 >
                     <path
                         d='M34.2583 29.1254C43.5742 30.5432 51.5442 37.3229 51.5442 48.5107C51.5442 60.2914 42.4766 69.2365 30.626 69.2365C18.6841 69.2365 9.61646 60.2914 9.61646 48.5236C9.61646 43.8449 11.1451 39.759 13.2618 36.2403L28.4833 11.4932H45.7692L34.2583 29.1254ZM30.613 42.0791C26.9676 42.0791 24.1716 44.9275 24.1716 48.5107C24.1716 52.0939 26.9676 55.0326 30.613 55.0326C34.2583 55.0326 36.9629 52.1197 36.9629 48.5107C36.9629 44.9147 34.2583 42.0791 30.613 42.0791Z'
@@ -70,7 +70,7 @@ export default function Footer() {
                             />
                             <Link
                                 href={""}
-                                className='text-base leading-normal '
+                                className='text-base leading-normal hover:text-cyan1 transition-colors duration-150'
                             >
                                 info@64bytes.de
                             </Link>
@@ -92,14 +92,36 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="flex justify-between sm:justify-stretch sm:gap-6">
-                      <Link href={''} className="leading-normal text-sm ">Impressum</Link>
-                      <Link href={''} className="leading-normal text-sm ">Datenschutz</Link>
-                      <Link href={''} className="leading-normal text-sm ">AGB</Link>
-                      <Link href={''} className="leading-normal text-sm ">Barrierefreiheit</Link>
+                    <div className='flex justify-between sm:justify-stretch sm:gap-6'>
+                        <Link
+                            href={""}
+                            className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
+                        >
+                            Impressum
+                        </Link>
+                        <Link
+                            href={""}
+                            className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
+                        >
+                            Datenschutz
+                        </Link>
+                        <Link
+                            href={""}
+                            className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
+                        >
+                            AGB
+                        </Link>
+                        <Link
+                            href={""}
+                            className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
+                        >
+                            Barrierefreiheit
+                        </Link>
                     </div>
 
-                    <p className="text-sm text-gray1 leading-normal ">© 64 BYTES GmbH</p>
+                    <p className='text-sm text-gray1 leading-normal '>
+                        © 64 BYTES GmbH
+                    </p>
                 </div>
             </div>
         </footer>

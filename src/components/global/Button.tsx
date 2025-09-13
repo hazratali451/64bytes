@@ -16,7 +16,7 @@ export default function Button({
         <button
             className={cn(
                 "py-2 md:px-6 px-4 xl:text-lg md:text-base text-sm font-medium leading-[24px] xl:leading-[28px] text-center rounded-[48px] backdrop-blur-[2px]",
-
+                "transition-all duration-400 ease-out",
                 variant === "cyan" && "bg-white hover:bg-cyan1 text-black1",
 
                 variant === "violet" && "bg-white hover:bg-violet1 text-black1",
