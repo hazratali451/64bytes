@@ -54,9 +54,7 @@ export default function Navbar() {
                     </nav>
                 </motion.header>
             ) : (
-                <header
-                    className='z-[99] fixed w-full top-0 lg:backdrop-blur-[2px] lg:bg-[#0b0b0b33] px-5 '
-                >
+                <header className='z-[99] fixed w-full top-0 lg:backdrop-blur-[2px] lg:bg-[#0b0b0b33] px-5 '>
                     <nav className='flex gap-4 items-center justify-between max-w-[1180px] mx-auto lg:py-4 py-3'>
                         <div className=''>{icon_logo}</div>
                         <ul className='lg:flex items-center gap-6 hidden'>
@@ -83,8 +81,8 @@ export default function Navbar() {
                 </header>
             )}
 
-            <motion.section
-                initial={{ y: "150%" }}
+            <motion.nav
+                initial={{ y: pathname === "/" ? "150%" : "0%" }}
                 animate={{ y: "0%" }}
                 transition={{ delay: 6, duration: 0.8, ease: easeOut }}
                 className=' lg:hidden z-99 fixed bottom-4 left-5 right-5 flex justify-center '
@@ -107,7 +105,7 @@ export default function Navbar() {
                         );
                     })}
                 </ul>
-            </motion.section>
+            </motion.nav>
         </>
     );
 }

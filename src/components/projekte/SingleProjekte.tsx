@@ -19,11 +19,11 @@ const commonContent = (
 );
 
 export default function SingleProjekte({ slug = "Kineo Medical" }) {
-    const title = decodeURIComponent(slug); 
+    const title = decodeURIComponent(slug);
     return (
         <section className='px-5 md:pt-34 pt-26.5 md:pb-30 pb-20'>
             <div className='max-w-[1180px] mx-auto '>
-                <div className='flex items-center whitespace-nowrap flex-wrap gap-3 mb-6'>
+                <div className='flex items-center whitespace-nowrap flex-wrap gap-2 sm:gap-3 sm:mb-6 mb-4'>
                     {["Startup Platform", "B2C", "UX UI Design", "SaaS"].map(
                         (cur, i) => (
                             <div
@@ -31,7 +31,7 @@ export default function SingleProjekte({ slug = "Kineo Medical" }) {
                                 className='h-[35px] inline-flex justify-center items-center px-3 relative bg-[linear-gradient(180deg,#D946FF33_0%,#18FFFF33_100%)] overflow-hidden rounded-full'
                             >
                                 <div className='absolute inset-[1px] rounded-full bg-black1'></div>
-                                <div className='relative text-lg leading-normal '>
+                                <div className='relative lg:text-lg md:text-sm text-xs leading-normal '>
                                     {cur}
                                 </div>
                             </div>
@@ -43,7 +43,7 @@ export default function SingleProjekte({ slug = "Kineo Medical" }) {
                 </h1>
 
                 <Image
-                    className='my-16 rounded-sm w-full h-[712px] object-cover object-center'
+                    className='md:my-16 my-8 rounded-sm w-full lg:h-[712px] object-cover object-center'
                     src='/assets/projekte/singleBig.png'
                     width={1180}
                     height={712}
@@ -51,23 +51,23 @@ export default function SingleProjekte({ slug = "Kineo Medical" }) {
                     priority
                 />
 
-                <div className='flex gap-30 items-center'>
+                <div className='flex lg:gap-30 items-center flex-col lg:flex-row'>
                     <div className=''>
                         {commonContent}
                         <Image
                             src='/assets/projekte/singleLeft.png'
-                            className='rounded-sm my-10 w-full object-cover object-center '
+                            className='rounded-sm lg:my-10 my-[32px_16px] w-full object-cover object-center '
                             alt=''
                             width={580}
                             height={342}
                         />
-                        {commonContent}
+                        <div className='lg:block hidden'>{commonContent}</div>
                     </div>
 
-                    <div className=''>
+                    <div className='flex flex-col md:gap-8 gap-4'>
                         <Image
                             src='/assets/projekte/mobileTop.png'
-                            className='rounded-sm object-cover object-center min-w-[480px] h-[400px]'
+                            className='rounded-sm object-cover object-center lg:min-w-[480px] md:h-[400px] h-[308px]'
                             alt=''
                             width={480}
                             height={400}
@@ -75,18 +75,20 @@ export default function SingleProjekte({ slug = "Kineo Medical" }) {
 
                         <Image
                             src='/assets/projekte/mobileBottom.png'
-                            className='mt-8 rounded-sm object-cover object-center min-w-[480px] h-[400px]'
+                            className=' rounded-sm object-cover object-center lg:min-w-[480px] md:h-[400px] h-[308px]'
                             alt=''
                             width={480}
                             height={400}
                         />
+
+                        <div className='lg:hidden mt-4'>{commonContent}</div>
                     </div>
                 </div>
 
-                <div className='flex gap-30 items-center mt-16'>
+                <div className='flex gap-8 lg:gap-30 items-center flex-col lg:flex-row lg:mt-16 md:mt-10 mt-8'>
                     <Image
                         src='/assets/projekte/singleLeft.png'
-                        className='rounded-sm my-10 w-full max-w-[580px] object-cover object-center '
+                        className='rounded-sm w-full max-w-[580px] object-cover object-center '
                         alt=''
                         width={580}
                         height={342}
@@ -95,23 +97,23 @@ export default function SingleProjekte({ slug = "Kineo Medical" }) {
                     {commonContent}
                 </div>
 
-                <div className='flex flex-col items-center mt-30'>
+                <div className='flex flex-col items-start sm:items-center lg:mt-30 mt-20'>
                     <div className='flex items-center gap-4 w-full'>
-                        <div className=' h-[1px] bg-gray1 opacity-25 flex-1'></div>
+                        <div className=' h-[1px] bg-gray1 opacity-25 sm:flex-1 min-w-3'></div>
                         <h2 className='text-sm leading-[24px] text-gray1 '>
                             Join the Game
                         </h2>
                         <div className='h-[1px] bg-gray1 opacity-25 flex-1'></div>
                     </div>
 
-                    <h3 className='text-center mt-8 mb-6 font-robotoMono text-lg lg:text-2xl leading-[28px] lg:leading-[34px] tracking-[1px] uppercase '>
+                    <h3 className='sm:text-center mt-8 mb-6 font-robotoMono text-lg lg:text-2xl leading-[28px] lg:leading-[34px] tracking-[1px] uppercase '>
                         <span className='text-violet1'>Überzeugt?</span> <br />{" "}
                         Dann lassen Sie uns <br /> über{" "}
                         <span className='text-violet1'>Ihr Projekt</span>{" "}
                         sprechen.
                     </h3>
 
-                    <Button variant="violet">Kostenlose Erstberatung </Button>
+                    <Button variant='violet'>Kostenlose Erstberatung </Button>
                 </div>
             </div>
         </section>

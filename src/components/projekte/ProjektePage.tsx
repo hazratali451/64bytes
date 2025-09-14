@@ -24,7 +24,7 @@ export default function ProjektePage() {
                 initial={{ rotate: -30 }}
                 animate={{ rotate: 15 }}
                 transition={{ duration: 1.6, ease: "easeIn" }}
-                className='absolute -top-[126px] left-[326px] size-[1718px] max-w-none'
+                className='absolute lg:-top-[126px] -top-[190px] lg:left-[326px] -left-[354px] size-[1718px] max-w-none'
             >
                 <Image src={bg} alt='' />
             </motion.div>
