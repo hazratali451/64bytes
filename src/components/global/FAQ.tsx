@@ -5,15 +5,20 @@ import { AnimatePresence, motion, easeInOut } from "motion/react";
 
 type FAQItem = {
     title: string | ReactElement;
-    text?: string; // optional, falls back to global txt
+    content?: string | ReactElement; // optional, falls back to global txt
 };
 
 type FAQProps = {
     items: FAQItem[];
-    defaultText?: string;
+    defaultContent?: string;
+    showNumber?:boolean;
 };
 
-export default function FAQ({ items, defaultText }: FAQProps) {
+export default function FAQ({
+    items,
+    defaultContent,
+    showNumber = true,
+}: FAQProps) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const toggle = (index: number) => {
@@ -37,9 +42,11 @@ export default function FAQ({ items, defaultText }: FAQProps) {
                             aria-controls={`faq-content-${i}`}
                         >
                             <div>
-                                <p className='text-sm mb-2 font-robotoMono leading-normal tracking-[1px] text-violet1'>
-                                    {String(i + 1).padStart(2, "0")}
-                                </p>
+                                {showNumber && (
+                                    <p className='text-sm mb-2 font-robotoMono leading-normal tracking-[1px] text-violet1'>
+                                        {String(i + 1).padStart(2, "0")}
+                                    </p>
+                                )}
 
                                 {/* animated heading: scale from left for smooth "size" change */}
                                 <motion.h3
@@ -75,6 +82,7 @@ export default function FAQ({ items, defaultText }: FAQProps) {
                                     y2='26'
                                     stroke='#F4F2ED'
                                     strokeWidth='2'
+                                    className="md:stroke-2 stroke-1"
                                 />
                                 <line
                                     y1='13'
@@ -82,6 +90,7 @@ export default function FAQ({ items, defaultText }: FAQProps) {
                                     y2='13'
                                     stroke='#F4F2ED'
                                     strokeWidth='2'
+                                    className="md:stroke-2 stroke-1"
                                 />
                             </motion.svg>
                         </button>
@@ -106,7 +115,7 @@ export default function FAQ({ items, defaultText }: FAQProps) {
                                         exit={{ opacity: 0 }}
                                         transition={transition}
                                     >
-                                        {item.text ?? defaultText}
+                                        {item.content ?? defaultContent}
                                     </motion.div>
                                 </motion.div>
                             )}

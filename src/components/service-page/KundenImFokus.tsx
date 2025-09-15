@@ -1,6 +1,6 @@
 import React from "react";
 import LogoSlider from "./LogoSlider";
-import H2 from "../global/H2";
+import H2 from "./H2";
 export default function KundenImFokus() {
     return (
         <section className='relative z-1'>

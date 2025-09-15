@@ -60,7 +60,7 @@ export default function FaqSection() {
                     </div>
 
                     <div className='lg:min-w-[480px]'>
-                        <FAQ items={faqItems} defaultText={txt} />
+                        <FAQ items={faqItems} defaultContent={txt} />
                     </div>
                 </div>
 

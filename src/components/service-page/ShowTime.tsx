@@ -1,6 +1,6 @@
 import React from "react";
 import ShowtimeCards from "./ShowTimeCards";
-import H2 from "../global/H2";
+import H2 from "./H2";
 import Image from "next/image";
 
 export default function ShowTime() {
