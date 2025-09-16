@@ -50,7 +50,7 @@ export default function Navbar() {
                             })}
                         </ul>
 
-                        <Button variant='fade-violet' />
+                        <Button variant='fade-violet' link="/kontaktieren" />
                     </nav>
                 </motion.header>
             ) : (
@@ -76,7 +76,7 @@ export default function Navbar() {
                             })}
                         </ul>
 
-                        <Button variant='fade-violet' />
+                        <Button variant='fade-violet' link="/kontaktieren" />
                     </nav>
                 </header>
             )}

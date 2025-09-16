@@ -10,7 +10,7 @@ type FAQItem = {
 
 type FAQProps = {
     items: FAQItem[];
-    defaultContent?: string;
+    defaultContent?: string | ReactElement;
     showNumber?:boolean;
 };
 

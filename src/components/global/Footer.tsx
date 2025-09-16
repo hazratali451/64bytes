@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+const footerLinks = [
+    { label: "Impressum", href: "/impressum" },
+    { label: "Datenschutz", href: "/datenschutz" },
+    { label: "AGB", href: "/agb" },
+    { label: "Barrierefreiheit", href: "/barrierefreiheit" },
+];
 
 export default function Footer() {
     return (
@@ -93,30 +99,15 @@ export default function Footer() {
                     </div>
 
                     <div className='flex justify-between sm:justify-stretch sm:gap-6'>
-                        <Link
-                            href={""}
-                            className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
-                        >
-                            Impressum
-                        </Link>
-                        <Link
-                            href={""}
-                            className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
-                        >
-                            Datenschutz
-                        </Link>
-                        <Link
-                            href={""}
-                            className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
-                        >
-                            AGB
-                        </Link>
-                        <Link
-                            href={""}
-                            className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
-                        >
-                            Barrierefreiheit
-                        </Link>
+                        {footerLinks.map((link, i) => (
+                            <Link
+                                key={i}
+                                href={link.href}
+                                className='leading-normal text-sm hover:text-cyan1 transition-colors duration-150'
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
                     </div>
 
                     <p className='text-sm text-gray1 leading-normal '>

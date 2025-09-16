@@ -1,9 +1,157 @@
-import React from 'react'
+"use client";
+import React, { useState } from "react";
+import InputField from "../global/InputField";
+import Link from "next/link";
+import Button from "../global/Button";
+import CheckBox from "../global/CheckBox";
 
 export default function KontakPage() {
-  return (
-    <div>
-        
-    </div>
-  )
+    const [inps, setInps] = useState({
+        name: "",
+        email: "",
+        company: "",
+        msg: "",
+        tick: false,
+    });
+
+    const [emailError, setEmailError] = useState<undefined | string>(undefined);
+
+    function isEmpty() {
+        return (
+            !inps.name.trim() ||
+            !inps.email.trim() ||
+            !inps.company.trim() ||
+            !inps.msg.trim() ||
+            !inps.tick
+        );
+    }
+
+    function validate(type: string) {
+        if (type === "email") {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(inps.email)
+                ? setEmailError(undefined)
+                : setEmailError("Geben Sie eine gültige E-Mail Adresse ein!");
+        }
+    }
+
+    return (
+        <section className='px-5 md:pt-34 pt-26.5 md:pb-30 pb-20 overflow-hidden relative'>
+            <div className='max-w-[1180px] mx-auto flex lg:flex-row flex-col gap-6 sm:gap-16 md:gap-24 lg:gap-26 xl:gap-30 relative z-1'>
+                <div className='max-w-[380px]'>
+                    <h1 className='font-robotoMono text-[28px] md:text-[40px] leading-[120%] tracking-[1px] uppercase'>
+                        <span className='text-cyan1'> Kontaktieren</span> Sie
+                        uns!
+                    </h1>
+
+                    <p className='text-gray1 leading-normal text-base max-w-[580px] mt-3.5'>
+                        Gemeinsam bringen wir <br className='sm:hidden' />
+                        Ihre Entwicklung nach vorn.
+                    </p>
+                </div>
+
+                <div className='flex-1'>
+                    <div className='grid sm:gap-y-8 gap-y-6 sm:gap-x-5 sm:grid-cols-2'>
+                        <InputField
+                            name='name'
+                            label='Name'
+                            placeholder='Geben Sie Ihren Namen ein'
+                            suffix={"contact-us"}
+                            onChange={(e) => {
+                                setInps((prev) => ({
+                                    ...prev,
+                                    name: e.target.value,
+                                }));
+                            }}
+                        />
+
+                        <InputField
+                            name='email'
+                            label='E-Mail'
+                            placeholder='Geben Sie Ihre E-Mail-Adresse ein'
+                            suffix={"contact-us"}
+                            type='email'
+                            onChange={(e) => {
+                                setInps((prev) => ({
+                                    ...prev,
+                                    email: e.target.value,
+                                }));
+                            }}
+                            errormsg={emailError}
+                            onBlur={() => validate("email")}
+                        />
+
+                        <InputField
+                            name='Unternehmen'
+                            label='Unternehmen'
+                            placeholder='Geben Sie Ihr Unternehmen ein'
+                            suffix={"contact-us"}
+                            onChange={(e) => {
+                                setInps((prev) => ({
+                                    ...prev,
+                                    company: e.target.value,
+                                }));
+                            }}
+                        />
+                    </div>
+
+                    <div className='sm:mt-8 mt-6'>
+                        {" "}
+                        <label
+                            htmlFor='text-contact-us'
+                            className='text-base leading-normal '
+                        >
+                            Erzähl uns von Ihren Projekt
+                        </label>{" "}
+                        <textarea
+                            className=' text-white1 py-4 block border-b border-gray1 w-full text-sm leading-normal tracking-[0.8px] placeholder:text-gray1 focus:outline-none focus:placeholder:opacity-0 h-[180px] focus:border-white1'
+                            name='text'
+                            id='text-contact-us'
+                            placeholder='Über Ihre großartige Idee'
+                            autoComplete='off'
+                            onChange={(e) => {
+                                setInps((prev) => ({
+                                    ...prev,
+                                    msg: e.target.value,
+                                }));
+                            }}
+                        />
+                    </div>
+
+                    <div className='my-8 flex sm:items-center  gap-2 '>
+                        <div className='mt-1 sm:mt-0'>
+                            <CheckBox
+                                value={inps.tick}
+                                onClick={() =>
+                                    setInps((prev) => ({
+                                        ...prev,
+                                        tick: !prev.tick,
+                                    }))
+                                }
+                            />
+                        </div>
+
+                        <p className='text-sm text-gray1 leading-normal '>
+                            Ich habe alle{" "}
+                            <Link
+                                className='underline underline-offset-2'
+                                href={""}
+                            >
+                                Datenschutzrichtlinien
+                            </Link>{" "}
+                            gelesen und stimme zu.
+                        </p>
+                    </div>
+
+                    <div
+                        className={`${
+                            isEmpty() ? "opacity-50 pointer-events-none" : ""
+                        }`}
+                    >
+                        <Button variant='violet'>Einreichen</Button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }

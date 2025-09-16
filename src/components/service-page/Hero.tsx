@@ -24,7 +24,7 @@ export default function Hero() {
 
                 <AnimatedHeading />
                 <div className='md:block hidden'>
-                    <Button variant='violet'>Projekte im Blick </Button>
+                    <Button variant='violet' link="/projekte">Projekte im Blick </Button>
                 </div>
 
                 <AnimatedHeroBtn />

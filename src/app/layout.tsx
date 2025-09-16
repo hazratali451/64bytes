@@ -42,7 +42,7 @@ export default function RootLayout({
             className={`${satoshi.variable} ${robotoMono.variable}`}
             lang='en'
         >
-            <body className='antialiased bg-black1 text-white1'>
+            <body className='antialiased bg-black1 text-white1 flex flex-col min-h-screen'>
                 {children}
             </body>
         </html>
