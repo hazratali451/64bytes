@@ -19,7 +19,7 @@ export default function ServerError() {
                             500
                         </h1>
 
-                        <p className='text-center text-base leading-normal sm:hidden'>
+                        <p className='text-center text-base leading-normal '>
                             Unsere Entwickler jagen gerade den Bug. <br />
                             Er ist flink, aber wir sind schneller!
                         </p>

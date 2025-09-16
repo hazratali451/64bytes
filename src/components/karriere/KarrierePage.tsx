@@ -367,7 +367,7 @@ export default function KarrierePage() {
                     initial={{ y: -120, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1.2, ease: "easeInOut" }}
-                    className='flex md:flex-row flex-col md:gap-5 gap-8'
+                    className='flex md:flex-row flex-col xl:gap-5 sm:gap-20 gap-8'
                 >
                     <div className='lg:min-w-[480px]'>
                         <h1 className='font-robotoMono text-[28px] md:text-[40px] leading-[120%] tracking-[1px] uppercase'>
@@ -376,8 +376,8 @@ export default function KarrierePage() {
                             unseres <span className='text-cyan1'>Teams</span>
                         </h1>
                         <p className='text-gray1 leading-normal text-base max-w-[580px] mt-3.5'>
-                            Ob spannende Idee oder wertvolle Skills{" "}
-                            <br className='xl:block hidden 2xl:hidden' />
+                            <span className="hidden lg:inline">&nbsp;</span>Ob spannende Idee oder wertvolle Skills{" "}
+                            <br className='md:block hidden 2xl:hidden' />
                             fürs Team – wir freuen uns auf Sie.
                         </p>
                     </div>

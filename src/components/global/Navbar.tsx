@@ -30,7 +30,7 @@ export default function Navbar() {
                     className='z-[99] fixed w-full top-0 lg:backdrop-blur-[2px] lg:bg-[#0b0b0b33] px-5 '
                 >
                     <nav className='flex gap-4 items-center justify-between max-w-[1180px] mx-auto lg:py-4 py-3'>
-                        <div className=''>{icon_logo}</div>
+                        <Link href={'/'} className=''>{icon_logo}</Link>
                         <ul className='lg:flex items-center gap-6 hidden'>
                             {menuItems.map((item) => {
                                 const isActive = pathname === item.href;
@@ -56,7 +56,7 @@ export default function Navbar() {
             ) : (
                 <header className='z-[99] fixed w-full top-0 lg:backdrop-blur-[2px] lg:bg-[#0b0b0b33] px-5 '>
                     <nav className='flex gap-4 items-center justify-between max-w-[1180px] mx-auto lg:py-4 py-3'>
-                        <div className=''>{icon_logo}</div>
+                        <Link href={'/'} className=''>{icon_logo}</Link>
                         <ul className='lg:flex items-center gap-6 hidden'>
                             {menuItems.map((item) => {
                                 const isActive = pathname === item.href;

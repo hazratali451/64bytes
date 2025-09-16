@@ -25,11 +25,11 @@ export default function CookiePopup() {
         <div
             onClick={() => setShow(false)} // close on backdrop click
             className={`z-999 fixed inset-0 backdrop-blur-xs p-5 flex items-center 
-        transition-[opacity_blur] duration-400 ease-out
+        transition-[opacity_blur] duration-400 ease-out justify-center
         ${show ? "" : "opacity-0 pointer-events-none -z-10"}`}
         >
             <div
-                className='flex justify-center overflow-auto w-full'
+                className='overflow-auto'
                 onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside
             >
                 <div className='rounded-sm bg-black1 px-5 pt-14 pb-16 max-w-[580px] w-full flex flex-col gap-4'>

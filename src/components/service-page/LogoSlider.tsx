@@ -18,8 +18,8 @@ export default function LogoMarquee({ pxPerSecond = 100 }: { pxPerSecond?: numbe
   const trackRef = useRef<HTMLDivElement>(null);
   const [distance, setDistance] = useState(0);
   const [duration, setDuration] = useState(20);
+  const [paused, setPaused] = useState(false);
 
-  // measure first set of images for precise animation
   useEffect(() => {
     function update() {
       if (!trackRef.current) return;
@@ -27,7 +27,6 @@ export default function LogoMarquee({ pxPerSecond = 100 }: { pxPerSecond?: numbe
       if (!children.length) return;
 
       let totalWidth = 0;
-      // sum widths of the first set only
       for (let i = 0; i < logos.length; i++) {
         const el = children[i] as HTMLElement;
         totalWidth += el.offsetWidth + 80; // include gap
@@ -46,20 +45,35 @@ export default function LogoMarquee({ pxPerSecond = 100 }: { pxPerSecond?: numbe
     };
   }, [pxPerSecond]);
 
-  const slides = [...logos, ...logos]; // duplicate for seamless loop
+  const slides = [...logos, ...logos];
 
   return (
-    <div className="logo-marquee" style={{ overflow: "hidden" }}>
+    <div
+      className="logo-marquee"
+      style={{ overflow: "hidden" }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div
         ref={trackRef}
         className="logo-marquee-track flex md:gap-20 gap-12 items-center"
         style={{
-          animation: `marquee ${duration}s linear infinite`,
+          // use longhand animation properties instead of the `animation` shorthand
+          animationName: "marquee",
+          animationDuration: `${duration}s`,
+          animationTimingFunction: "linear",
+          animationIterationCount: "infinite",
+          animationPlayState: paused ? "paused" : "running",
         }}
       >
         {slides.map((logo, i) => (
           <div key={i} style={{ flex: "0 0 auto" }}>
-            <Image loading="eager" src={logo} alt={`logo-${i + 1}`} className="object-contain object-center w-auto h-10 md:h-auto" />
+            <Image
+              loading="eager"
+              src={logo}
+              alt={`logo-${i + 1}`}
+              className="object-contain object-center w-auto h-10 md:h-auto"
+            />
           </div>
         ))}
       </div>
@@ -70,8 +84,8 @@ export default function LogoMarquee({ pxPerSecond = 100 }: { pxPerSecond?: numbe
           100% { transform: translateX(-${distance}px); }
         }
 
-        .logo-marquee:hover .logo-marquee-track {
-          animation-play-state: paused;
+        .logo-marquee-track {
+          /* no inline shorthand needed here */
         }
       `}</style>
     </div>

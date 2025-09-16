@@ -143,12 +143,10 @@ export default function KontakPage() {
                         </p>
                     </div>
 
-                    <div
-                        className={`${
-                            isEmpty() ? "opacity-50 pointer-events-none" : ""
-                        }`}
-                    >
-                        <Button variant='violet'>Einreichen</Button>
+                    <div className={`${isEmpty() ? "opacity-50 cursor-pointer" : ""}`}>
+                        <div className={`${isEmpty() ? "pointer-events-none" : ""}`}>
+                            <Button variant='violet'>Einreichen</Button>
+                        </div>
                     </div>
                 </div>
             </div>
