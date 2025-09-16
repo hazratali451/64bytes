@@ -377,7 +377,7 @@ export default function KarrierePage() {
                         </h1>
                         <p className='text-gray1 leading-normal text-base max-w-[580px] mt-3.5'>
                             <span className="hidden lg:inline">&nbsp;</span>Ob spannende Idee oder wertvolle Skills{" "}
-                            <br className='md:block hidden 2xl:hidden' />
+                            <br className='md:block hidden ' />
                             fürs Team – wir freuen uns auf Sie.
                         </p>
                     </div>
