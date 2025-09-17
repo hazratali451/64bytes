@@ -392,13 +392,24 @@ export default function KarrierePage() {
                 </motion.div>
             </div>
 
-            <div className='absolute inset-0 flex justify-center'>
+            <div className='absolute inset-0 flex justify-center mx-auto max-w-[1440px]'>
+                {/* more larger devices */}
+                <motion.div
+                    initial={{ rotate: 30, y: -20, right:'auto' }}
+                    animate={{ rotate: 0, y: -40, right:'-24%' }}
+                    transition={{ duration: 1.6, ease: "easeInOut" }}
+                    className='hidden 2xl:inline absolute'
+                >
+                    <Image className='w-[800px] ' src={webImg} alt='' priority />
+                </motion.div>
+                
                 {/* large devices */}
+                
                 <motion.div
                     initial={{ rotate: 30, y: -20, x: '0vw' }}
                     animate={{ rotate: 0, y: -40, x: '44.5vw' }}
                     transition={{ duration: 1.6, ease: "easeInOut" }}
-                    className='hidden md:inline absolute'
+                    className='hidden md:inline 2xl:hidden absolute'
                 >
                     <Image className='w-[800px] ' src={webImg} alt='' priority />
                 </motion.div>
@@ -406,11 +417,11 @@ export default function KarrierePage() {
                 {/* small devices */}
                 <motion.div
                     initial={{ rotate: 30, y: 100, x: "0%" }}
-                    animate={{ rotate: 3.5, y: 440, x: "54%" }}
+                    animate={{ rotate: 3.5, y: 435, x: "49%" }}
                     transition={{ duration: 1.8, ease: "easeInOut" }}
                     className='md:hidden absolute '
                 >
-                    <Image className='w-[406px] ' src={webImg} alt=''  priority/>
+                    <Image className='w-[406px] max-w-none' src={webImg} alt=''  priority/>
                 </motion.div>
             </div>
         </section>

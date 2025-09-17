@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Button from "../global/Button";
 import webImg from "@/../public/assets/about/web.svg";
 
-
 const aboutCards = [
     {
         image: "/assets/about/pic1.png",
@@ -32,29 +31,34 @@ export default function AboutPage() {
 
     return (
         <section className='px-5 md:pt-34 pt-26.5 md:pb-30 pb-20 overflow-hidden relative'>
-            <motion.div
-                initial={{ rotate: 90 }}
-                animate={{ rotate: 135 }}
-                transition={{ duration: 1.6, ease: "easeInOut" }}
-                className=' hidden md:inline absolute -right-[100px] top-[400px] '
-            >
-                <Image className='w-[476px] ' src={webImg} alt='' />
-            </motion.div>
+            {/* large device */}
+            <div className='max-w-[1440px] mx-auto absolute inset-0'>
+                <motion.div
+                    initial={{ rotate: 90 }}
+                    animate={{ rotate: 135 }}
+                    transition={{ duration: 1.6, ease: "easeInOut" }}
+                    className=' hidden md:inline absolute -right-[100px] top-[400px] '
+                >
+                    <Image className='w-[476px] ' src={webImg} alt='' />
+                </motion.div>
 
-            <motion.div
-                initial={{ rotate: 0 }}
-                animate={{ rotate: 45 }}
-                transition={{ duration: 1.6, ease: "easeInOut" }}
-                className='hidden md:inline absolute right-[534px] top-[196px]'
-            >
-                <Image className='w-[476px] ' src={webImg} alt='' />
-            </motion.div>
+                <motion.div
+                    initial={{ rotate: 0 }}
+                    animate={{ rotate: 45 }}
+                    transition={{ duration: 1.6, ease: "easeInOut" }}
+                    className='hidden md:inline absolute right-[534px] top-[196px]'
+                >
+                    <Image className='w-[476px] ' src={webImg} alt='' />
+                </motion.div>
+            </div>
+
+            {/* small device */}
 
             <motion.div
                 initial={{ rotate: 75 }}
                 animate={{ rotate: 90 }}
                 transition={{ duration: 1.6, ease: "easeOut" }}
-                className='md:hidden absolute -right-[195px] top-[410px] '
+                className='md:hidden absolute -right-[195px] top-[485px] '
             >
                 <Image className='w-[333px] ' src={webImg} alt='' />
             </motion.div>
@@ -63,7 +67,7 @@ export default function AboutPage() {
                 initial={{ rotate: 15 }}
                 animate={{ rotate: 0 }}
                 transition={{ duration: 1.6, ease: "easeOut" }}
-                className='md:hidden absolute right-[34px] top-[147px]'
+                className='md:hidden absolute -left-[34px] top-[200px]'
             >
                 <Image className='w-[333px] ' src={webImg} alt='' />
             </motion.div>
