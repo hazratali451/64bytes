@@ -2,56 +2,53 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 // Local Satoshi font
 const satoshi = localFont({
-    src: [
-        {
-            path: "../fonts/Satoshi-Variable.woff2",
-            weight: "300 900",
-            style: "normal",
-        },
-        {
-            path: "../fonts/Satoshi-VariableItalic.woff2",
-            weight: "300 900",
-            style: "italic",
-        },
-    ],
-    variable: "--font-satoshi",
-    display: "swap",
+  src: [
+    {
+      path: "../fonts/Satoshi-Variable.woff2",
+      weight: "300 900",
+      style: "normal",
+    },
+    {
+      path: "../fonts/Satoshi-VariableItalic.woff2",
+      weight: "300 900",
+      style: "italic",
+    },
+  ],
+  variable: "--font-satoshi",
+  display: "swap",
 });
 
 // Google Roboto Mono font
 const robotoMono = Roboto_Mono({
-    subsets: ["latin"], // include other subsets if needed
-    weight: ["400", "700"],
-    variable: "--font-roboto-mono",
-    display: "swap",
+  subsets: ["latin"], // include other subsets if needed
+  weight: ["400", "700"],
+  variable: "--font-roboto-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-    title: "64 BYTES",
-    description: "Gemeinsam Ihre Digitale Welt erobern",
-    icons: {
-        icon: [
-            { url: "/assets/logo.svg", sizes: "32x32", type: "image/png" },
-        ],
-        apple: "/assets/logo.svg",
-        shortcut: "/assets/logo.svg",
-    },
+  title: "64 BYTES",
+  description: "Gemeinsam Ihre Digitale Welt erobern",
+  icons: {
+    icon: [{ url: "/assets/logo.svg", sizes: "32x32", type: "image/png" }],
+    apple: "/assets/logo.svg",
+    shortcut: "/assets/logo.svg",
+  },
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: Readonly<{ children: React.ReactNode }>) {
-    return (
-        <html
-            className={`${satoshi.variable} ${robotoMono.variable}`}
-            lang='en'
-        >
-            <body className='antialiased bg-black1 text-white1 flex flex-col min-h-screen'>
-                {children}
-            </body>
-        </html>
-    );
+  return (
+    <html className={`${satoshi.variable} ${robotoMono.variable}`} lang="en">
+      <body className="antialiased bg-black1 text-white1 flex flex-col min-h-screen">
+        {children}
+        <Toaster />
+      </body>
+    </html>
+  );
 }
