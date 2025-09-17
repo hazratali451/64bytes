@@ -50,7 +50,7 @@ export default function KontakPage() {
                     </p>
                 </div>
 
-                <div className='flex-1'>
+                <form className='flex-1' onSubmit={(e)=>e.preventDefault()}>
                     <div className='grid sm:gap-y-8 gap-y-6 sm:gap-x-5 sm:grid-cols-2'>
                         <InputField
                             name='name'
@@ -148,7 +148,7 @@ export default function KontakPage() {
                             <Button variant='violet'>Einreichen</Button>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </section>
     );

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 
-import spiderNetImg from "@/../public/assets/service/spiderNet3.svg";
 
 import icon1 from "@/../public/assets/service/slider/1.svg";
 import icon2 from "@/../public/assets/service/slider/2.svg";
@@ -114,12 +113,6 @@ export default function SliderSection() {
                 ))}
             </div>
             <div className='max-w-[780px] mx-auto relative'>
-                <Image
-                    className='absolute lg:-left-[370px] lg:bottom-9 lg:top-auto -top-5 w-[330px] lg:w-auto'
-                    src={spiderNetImg}
-                    alt=''
-                />
-
                 <div className='flex lg:flex-row flex-col gap-8 lg:items-end relative z-1'>
                     <h2 className='text-white1 font-robotoMono leading-[120%] text-[28px] lg:text-[40px] uppercase tracking-[1px] '>
                         Alles aus <br /> einer Hand

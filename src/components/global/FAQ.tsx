@@ -105,8 +105,7 @@ export default function FAQ({
                                     animate={{ opacity: 1, height: "auto" }}
                                     exit={{ opacity: 0, height: 0 }}
                                     transition={transition}
-                                    style={{ overflow: "hidden" }}
-                                    className=' text-gray1 leading-normal text-base mt-2'
+                                    className='overflow-hidden text-gray1 leading-normal text-base '
                                 >
                                     {/* inner wrapper to ensure text fades smoothly */}
                                     <motion.div
@@ -114,6 +113,7 @@ export default function FAQ({
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
                                         transition={transition}
+                                        className="pt-2"
                                     >
                                         {item.content ?? defaultContent}
                                     </motion.div>
