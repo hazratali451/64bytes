@@ -22,7 +22,7 @@ export default function TerminCTA() {
                         </h3>
                     </div>
 
-                    <Button>Kostenlose Erstberatung </Button>
+                    <Button link="/kontaktieren">Kostenlose Erstberatung </Button>
                 </div>
 
                 <div

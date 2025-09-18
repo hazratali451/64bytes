@@ -395,7 +395,7 @@ export default function KarrierePage() {
             <div className='absolute inset-0 flex justify-center mx-auto max-w-[1440px]'>
                 {/* more larger devices */}
                 <motion.div
-                    initial={{ rotate: 30, y: -20, right:'auto' }}
+                    initial={{ rotate: 30, y: -20, right:'20%' }}
                     animate={{ rotate: 0, y: -40, right:'-24%' }}
                     transition={{ duration: 1.6, ease: "easeInOut" }}
                     className='hidden 2xl:inline absolute'

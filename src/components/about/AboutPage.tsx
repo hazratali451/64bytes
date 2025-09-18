@@ -200,14 +200,14 @@ export default function AboutPage() {
 
                     <h3 className='sm:text-center mt-8 mb-6 font-robotoMono text-lg lg:text-2xl leading-[28px] lg:leading-[34px] tracking-[1px] uppercase '>
                         Unsere Kultur spricht Sie an?{" "}
-                        <br className='xl:block hidden ' />
+                        <br className='sm:block hidden ' />
                         Dann <span className='text-violet1'>
                             werden
                         </span> Sie <span className='text-violet1'>Teil</span>{" "}
                         unseres <span className='text-violet1'>Teams</span>.
                     </h3>
 
-                    <Button variant='violet'>Jobs entdecken</Button>
+                    <Button variant='violet' link="/karriere">Jobs entdecken</Button>
                 </motion.div>
             </div>
         </section>

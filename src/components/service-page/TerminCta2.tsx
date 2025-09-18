@@ -28,7 +28,7 @@ export default function TerminCta2() {
                         Sie uns für eine unverbindliche Beratung.
                     </p>
 
-                    <Button variant="violet">Unverbindlich anfragen </Button>
+                    <Button variant="violet" link="/kontaktieren">Unverbindlich anfragen </Button>
                 </div>
 
                 <div

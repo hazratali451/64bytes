@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/utils/cn"; // make sure this points to your cn file
+import Link from "next/link";
 
 interface ButtonProps {
   children?: React.ReactNode;
@@ -44,9 +45,9 @@ export default function Button({
 
   if (link) {
     return (
-      <a href={link} className={classes} onClick={onClick}>
+      <Link href={link} className={classes} onClick={onClick}>
         {children}
-      </a>
+      </Link>
     );
   }
 

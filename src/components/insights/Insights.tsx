@@ -202,7 +202,7 @@ export default function Insights() {
                         sprechen.
                     </h3>
 
-                    <Button variant='violet'>Kostenlose Erstberatung </Button>
+                    <Button variant='violet' link="/kontaktieren">Kostenlose Erstberatung </Button>
                 </div>
             </div>
         </section>

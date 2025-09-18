@@ -1,7 +1,7 @@
 "use client";
 
 // ==========
-// onClick={() => setActive(p.target)}
+// 
 // ===========
 import { useState } from "react";
 import Image from "next/image";
@@ -134,9 +134,7 @@ export default function ShowtimeDynamic() {
                             return (
                                 <p
                                     key={`e-${idx}`}
-                                    onClick={() => {
-                                        setActive((prev) => (prev > 2 ? 2 : 9));
-                                    }}
+                                    onClick={() => setActive(p.target)}
                                     className='opacity-50 cursor-pointer'
                                     title={
                                         p.side === "left"
