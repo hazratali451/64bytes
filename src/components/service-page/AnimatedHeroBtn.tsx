@@ -12,7 +12,7 @@ export default function AnimatedHeroBtn({ text = "Projekte im Blick" }) {
       animate={{ y: 0 }}
       transition={{ delay: 1.5, duration: 1.4, ease: "easeOut" }}
     >
-      <Button variant="violet">{text}</Button>
+      <Button variant="violet" link="/projekte">{text}</Button>
     </motion.div>
   );
 }
